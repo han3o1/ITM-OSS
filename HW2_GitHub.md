@@ -3,19 +3,28 @@
     Use git checkout to explore each branch.
     Use git log --decorate to explore the structure of commits.
 
-    Branches:
-      - master
-      - feature
-    Commits on master:
-      - commit 123abc: Initial commit
-      - commit 456def: Added new feature
-    Commits on feature:
-      - commit 789ghi: Working on feature branch
+Branches:
+- master
+- feature
 
+Commits on master:
+- commit 123abc: Initial commit
+- commit 456def: Added new feature
+
+Commits on feature:
+- commit 789ghi: Working on feature branch
+    
+    
 2. Try git log --graph --all to see the commit tree. Paste the result here and write a paragraph to provide an interpretation of what you found.
 
+```
+* commit 4ea89c61fe9d387ce49b59878c4067d9f3a013d0 (HEAD -> main, origin/main, origin/HEAD)
+  Author: Haneol LEE <skqieum@gmail.com>
+  Date:   Tue Oct 8 10:49:39 2024 +0900
 
-   
+      Create HW2_GitHub.md
+```
+---
 4. Choose an already existing branch and use git diff BRANCH_NAME to view the differences between a branch and the current branch. Summarize the difference from master to the other branch.
 5. Write a command sequence to merge the branch that is not the master branch into master.
 6. Write a command (or sequence) to (i) create a new branch called print-msg (from the master) and (ii) change to this branch.
