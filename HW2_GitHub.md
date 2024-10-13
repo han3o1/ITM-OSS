@@ -50,6 +50,7 @@ Date:   Mon Aug 19 18:35:11 2024 +0900
 
     Creating all files (all empty)
 ```
+
 ---
 2. Try git log --graph --all to see the commit tree. Paste the result here and write a paragraph to provide an interpretation of what you found.
 ```
@@ -83,6 +84,7 @@ This commit log displays the structure of two branches:
 - The `feature-msg` branch has the commit (71bcd3fc) just before `master`, where the header for the `printMessage()` method was added.
 - The previous commit (b487ec9) introduced the skeleton of the `A` class.
 - The very first commit (f6f58b7) initialized the project with all empty files.
+
 ---
 3. Choose an already existing branch and use git diff BRANCH_NAME to view the differences between a branch and the current branch. Summarize the difference from master to the other branch.
 ```
@@ -128,25 +130,29 @@ Differences between `master` and `feature-msg`:
 3. Main.java:
    - In the `feature-msg` branch, a new class `Main` has been added. It contains a `main` method with a comment placeholder (`//write code here`), but no functional code is implemented yet.
 In summary, the `feature-msg` branch introduces two new files (`B.java` and `Main.java`) and removes the implementation of the `printMessage()` method in `A.java`.
+
 ---
 4. Write a command sequence to merge the branch that is not the master branch into master.
 ```
 git merge feature-msg
 ```
+
 ---
 5. Write a command (or sequence) to (i) create a new branch called print-msg (from the master) and (ii) change to this branch.
 ```
-git checkout -b print-msg
+git branch print-msg
+git checkout print-msg
 ```
+
 ---
 6. Edit A.java adding the following implementation code for the printMessage() method.
         System.out.println("This is a new message.");
           System.out.println("Git is fun, isn't it?");
 ```
-$ vi A.java
+vi A.java
 ```
 ```
-$ cat A.java
+cat A.java
 public class A {
 
     public void printMessage(){
@@ -154,24 +160,25 @@ public class A {
         System.out.println("Git is fun, isn't it?");
     }
 ```
+
 ---
 7. Write a command (or sequence) to commit your changes.
 ```
-$ git commit -m "Implement printMessage() method in A.java"
-[print-msg 7aac2ac] Implement printMessage() method in A.java
- 1 file changed, 3 insertions(+), 2 deletions(-)
+git add A.java
+git commit -m "Added new message"
 ```
+
 ---
 8. Change back to the master branch and change A.java adding the following implementation code for the printMessage() method (commit your change to master):
         System.out.println("Hello opensource world!");
 ```
-$ git checkout master
+git checkout master
 ```
 ```
-$ vi A.java
+vi A.java
 ```
 ```
-$ cat A.java
+cat A.java
 public class A {
 
     public void printMessage(){
@@ -180,17 +187,34 @@ public class A {
 
 }
 ```
+```
+git add A.java
+git commit -m "Added hello message"
+```
+
 ---
 9. Write a command sequence to merge the print-msg branch into master and describe what happened.
+```
+git merge print-msg
+Auto-merging A.java
+CONFLICT (content): Merge conflict in A.java
+Automatic merge failed; fix conflicts and then commit the result.
+```
+The message indicates that there is a merge conflict in the `A.java` file between the `master` branch and the `print-msg` branch. Both branches have made changes to the same part of the same file.
 
-
+---
 10. Write a set of commands to abort the merge.
+```
+git merge --abort
+```
 
-
+---
 11. Now repeat item 9, but proceed with the manual merge (editing A.java). All implemented methods are needed. Explain your procedure.
 
 
+---
 12. Write a command (or set of commands) to proceed with the merge and make master branch up-to-date.
 
 
+---
 13. Complete Part 2. Then, come back here and answer the following: Report your experience of submitting the Part 2. Please, include the steps you followed, the commands you used, and the problems you faced (within the file you created for the Part 1).
