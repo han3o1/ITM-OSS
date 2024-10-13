@@ -210,11 +210,24 @@ git merge --abort
 
 ---
 11. Now repeat item 9, but proceed with the manual merge (editing A.java). All implemented methods are needed. Explain your procedure.
-
+```
+git add A.java
+git commit -m "Manual merge completed"
+```
+I performed a manual merge by resolving the conflicts(removing the conflict markers) directly in the file. This approach allowed to ensure that both sets of changes were retained and that the final implementation in A.java included the desired functionality.
 
 ---
 12. Write a command (or set of commands) to proceed with the merge and make master branch up-to-date.
-
+```
+git merge print-msg
+```
+```
+git add A.java
+git commit -m "Manual merge completed"
+```
+```
+git push origin master
+```
 
 ---
 13. Complete Part 2. Then, come back here and answer the following: Report your experience of submitting the Part 2. Please, include the steps you followed, the commands you used, and the problems you faced (within the file you created for the Part 1).
