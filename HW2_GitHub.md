@@ -231,3 +231,13 @@ git push origin master
 
 ---
 13. Complete Part 2. Then, come back here and answer the following: Report your experience of submitting the Part 2. Please, include the steps you followed, the commands you used, and the problems you faced (within the file you created for the Part 1).
+
+Steps
+1. Forked the Course Repository
+2. Created a Markdown File
+3. Wrote the Report
+4. Committed the File
+5. Pushed Changes to GitHub
+6. Created a Pull Request
+
+While trying to push my changes, I encountered errors related to the remote repository. I ensured that my local branch was up to date with the remote branch by pulling the latest changes before pushing.
